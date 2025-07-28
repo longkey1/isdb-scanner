@@ -1,0 +1,11 @@
+isdb-scanner:
+  image: ghcr.io/longkey1/isdb-scanner:latest
+  environment:
+    - LOCAL_UID=${LOCAL_UID}
+    - LOCAL_GID=${LOCAL_GID}
+  devices:
+    - /dev/bus:/dev/bus
+    - /dev/dvb:/dev/dvb
+  volumes:
+    - .:/work
+  working_dir: /work
